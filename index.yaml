@@ -2,6 +2,16 @@ apiVersion: v1
 entries:
   demo-sites:
   - apiVersion: v2
+    appVersion: 1.0.1
+    created: "2025-04-30T13:18:18.431041156Z"
+    description: Demo Sites Helm Chart
+    digest: ebdd3ef5e673ecd5e46a5347a3af01d2e400f18f69d2a794775f391ef2c3861a
+    name: demo-sites
+    type: application
+    urls:
+    - https://github.com/cliveweir/helm/releases/download/demo-sites-0.1.1/demo-sites-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
     appVersion: 1.0.0
     created: "2025-04-30T13:52:55.132625+01:00"
     description: Demo Sites Helm Chart
@@ -22,4 +32,4 @@ entries:
     urls:
     - hello-world-0.1.0.tgz
     version: 0.1.0
-generated: "2025-04-30T13:52:55.132023+01:00"
+generated: "2025-04-30T13:18:18.431058068Z"
