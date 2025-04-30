@@ -1,0 +1,25 @@
+apiVersion: v1
+entries:
+  demo-sites:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2025-04-30T13:52:55.132625+01:00"
+    description: Demo Sites Helm Chart
+    digest: 44e39a0c1270366408ab0d4cc992994dffe1942e06f9a381188fb98b8e832a62
+    name: demo-sites
+    type: application
+    urls:
+    - demo-sites-0.1.0.tgz
+    version: 0.1.0
+  hello-world:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2025-04-30T13:52:55.133012+01:00"
+    description: A Helm chart for Kubernetes
+    digest: da602929cbffa5b88666cc358c728984c46d5346ae6edad2a021ed2a5581f194
+    name: hello-world
+    type: application
+    urls:
+    - hello-world-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-04-30T13:52:55.132023+01:00"
