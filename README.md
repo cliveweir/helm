@@ -1,4 +1,4 @@
-# Helm Example Repository
+# Helm Example Repositoryx
 
 Ahoy world!  I'm a Helm repository for example charts.
 
