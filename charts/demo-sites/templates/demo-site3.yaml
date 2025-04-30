@@ -1,0 +1,152 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: demo-site3
+data:
+  config: |
+    server {
+        listen 8003;
+        server_name localhost;
+
+        location / {
+            root /usr/share/nginx/html;
+            index index.html;
+        }
+    }
+  html: "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n
+    \   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n
+    \   <meta name=\"description\" content=\"AmeriBank - Modern Banking Solutions
+    for Personal and Business Needs\">\n    <title>AmeriBank | Modern Banking Solutions</title>\n
+    \   <style>\n        :root {\n            --primary: #1a365d;\n            --primary-light:
+    #2d4ed8;\n            --secondary: #f8fafc;\n            --accent: #22c55e;\n
+    \           --gray-dark: #1f2937;\n            --gray-medium: #4b5563;\n            --gray-light:
+    #e5e7eb;\n            --white: #ffffff;\n        }\n\n        * {\n            margin:
+    0;\n            padding: 0;\n            box-sizing: border-box;\n        }\n\n
+    \       body {\n            font-family: system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;\n            line-height:
+    1.5;\n            color: var(--gray-dark);\n            background-color: var(--secondary);\n
+    \       }\n\n        .header {\n            background-color: var(--white);\n
+    \           box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);\n            position:
+    sticky;\n            top: 0;\n            z-index: 50;\n        }\n\n        .nav-container
+    {\n            max-width: 1280px;\n            margin: 0 auto;\n            padding:
+    1rem;\n            display: flex;\n            justify-content: space-between;\n
+    \           align-items: center;\n        }\n\n        .logo {\n            font-size:
+    1.5rem;\n            font-weight: 700;\n            color: var(--primary);\n            text-decoration:
+    none;\n        }\n\n        .nav-menu {\n            display: flex;\n            gap:
+    2rem;\n            list-style: none;\n            align-items: center; /* Aligns
+    the items vertically centered */\n\n        }\n\n        .nav-link {\n            color:
+    var(--gray-medium);\n            text-decoration: none;\n            font-weight:
+    500;\n            transition: color 0.2s;\n        }\n\n        .nav-link:hover
+    {\n            color: var(--primary);\n        }\n\n        .hero {\n            background:
+    linear-gradient(to right, var(--primary), var(--primary-light));\n            color:
+    var(--white);\n            padding: 6rem 1rem;\n        }\n\n        .hero-content
+    {\n            max-width: 1280px;\n            margin: 0 auto;\n            text-align:
+    center;\n        }\n\n        .hero h1 {\n            font-size: 3.5rem;\n            font-weight:
+    800;\n            margin-bottom: 1.5rem;\n        }\n\n        .hero p {\n            font-size:
+    1.25rem;\n            max-width: 600px;\n            margin: 0 auto 2rem;\n        }\n\n
+    \       .btn {\n            display: inline-block;\n            padding: 0.75rem
+    1.5rem;\n            border-radius: 0.375rem;\n            font-weight: 600;\n
+    \           text-decoration: none;\n            transition: all 0.2s;\n        }\n\n
+    \       .btn-primary {\n            background-color: var(--accent);\n            color:
+    var(--white);\n        }\n\n        .btn-primary:hover {\n            background-color:
+    #16a34a;\n        }\n\n        .section {\n            padding: 5rem 1rem;\n        }\n\n
+    \       .section-title {\n            text-align: center;\n            font-size:
+    2.25rem;\n            font-weight: 700;\n            margin-bottom: 3rem;\n            color:
+    var(--primary);\n        }\n\n        .card-grid {\n            display: grid;\n
+    \           grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));\n            gap:
+    2rem;\n            max-width: 1280px;\n            margin: 0 auto;\n        }\n\n
+    \       .card {\n            background: var(--white);\n            border-radius:
+    1rem;\n            padding: 2rem;\n            box-shadow: 0 4px 6px -1px rgba(0,
+    0, 0, 0.1);\n            transition: transform 0.2s;\n        }\n\n        .card:hover
+    {\n            transform: translateY(-4px);\n        }\n\n        .card h3 {\n
+    \           color: var(--primary);\n            font-size: 1.5rem;\n            margin-bottom:
+    1rem;\n        }\n\n        .features {\n            background-color: var(--white);\n
+    \       }\n\n        .feature-grid {\n            display: grid;\n            grid-template-columns:
+    repeat(auto-fit, minmax(250px, 1fr));\n            gap: 2rem;\n            max-width:
+    1280px;\n            margin: 0 auto;\n        }\n\n        .feature {\n            text-align:
+    center;\n            padding: 2rem;\n        }\n\n        .feature-icon {\n            background-color:
+    var(--secondary);\n            width: 3rem;\n            height: 3rem;\n            border-radius:
+    50%;\n            margin: 0 auto 1rem;\n            display: flex;\n            align-items:
+    center;\n            justify-content: center;\n        }\n\n        .cta {\n            background:
+    linear-gradient(to right, var(--primary), var(--primary-light));\n            color:
+    var(--white);\n            text-align: center;\n            padding: 4rem 1rem;\n
+    \       }\n\n        .cta h2 {\n            font-size: 2.25rem;\n            margin-bottom:
+    1.5rem;\n        }\n\n        .cta p {\n            font-size: 1.25rem;\n            margin-bottom:
+    2.5rem;\n            max-width: 600px;\n            margin-left: auto;\n            margin-right:
+    auto;\n        }\n\n        .footer {\n            background-color: var(--gray-dark);\n
+    \           color: var(--white);\n            padding: 4rem 1rem;\n        }\n\n
+    \       .footer-content {\n            max-width: 1280px;\n            margin:
+    0 auto;\n            display: grid;\n            grid-template-columns: repeat(auto-fit,
+    minmax(200px, 1fr));\n            gap: 2rem;\n        }\n\n        .footer-section
+    h4 {\n            font-size: 1.25rem;\n            margin-bottom: 1rem;\n        }\n\n
+    \       .footer-links {\n            list-style: none;\n        }\n\n        .footer-link
+    {\n            color: var(--gray-light);\n            text-decoration: none;\n
+    \           display: block;\n            margin-bottom: 0.5rem;\n        }\n\n
+    \       .footer-bottom {\n            max-width: 1280px;\n            margin:
+    2rem auto 0;\n            padding-top: 2rem;\n            border-top: 1px solid
+    var(--gray-medium);\n            text-align: center;\n            color: var(--gray-light);\n
+    \       }\n\n        @media (max-width: 768px) {\n            .nav-menu {\n                display:
+    none;\n            }\n\n            .hero h1 {\n                font-size: 2.5rem;\n
+    \           }\n        }\n    </style>\n</head>\n<body>\n    <header class=\"header\">\n
+    \       <nav class=\"nav-container\">\n            <a href=\"#\" class=\"logo\">AmeriBank</a>\n
+    \           <ul class=\"nav-menu\">\n                <li><a href=\"#\" class=\"nav-link\">Personal</a></li>\n
+    \               <li><a href=\"#\" class=\"nav-link\">Business</a></li>\n                <li><a
+    href=\"#\" class=\"nav-link\">Wealth</a></li>\n                <li><a href=\"#\"
+    class=\"nav-link\">About</a></li>\n                <li><a href=\"#\" class=\"btn
+    btn-primary\">Online Banking</a></li>\n            </ul>\n        </nav>\n    </header>\n\n
+    \   <section class=\"hero\">\n        <div class=\"hero-content\">\n            <h1>Banking
+    Made Simple</h1>\n            <p>Experience modern banking solutions designed
+    to help you achieve your financial goals</p>\n            <a href=\"#\" class=\"btn
+    btn-primary\">Open an Account</a>\n        </div>\n    </section>\n\n    <section
+    class=\"section\">\n        <h2 class=\"section-title\">Personal Banking Solutions</h2>\n
+    \       <div class=\"card-grid\">\n            <div class=\"card\">\n                <h3>Premium
+    Checking</h3>\n                <p>Enjoy zero monthly fees, unlimited transactions,
+    and exclusive rewards with our premium checking account.</p>\n            </div>\n
+    \           <div class=\"card\">\n                <h3>High-Yield Savings</h3>\n
+    \               <p>Earn more with our competitive interest rates and automated
+    savings tools.</p>\n            </div>\n            <div class=\"card\">\n                <h3>Smart
+    Investments</h3>\n                <p>Build your wealth with our expert-guided
+    investment solutions and personalized portfolios.</p>\n            </div>\n        </div>\n
+    \   </section>\n\n    <section class=\"features section\">\n        <h2 class=\"section-title\">Why
+    Choose AmeriBank</h2>\n        <div class=\"feature-grid\">\n            <div
+    class=\"feature\">\n                <div class=\"feature-icon\">\U0001F512</div>\n
+    \               <h3>Secure Banking</h3>\n                <p>Advanced security
+    measures to protect your finances</p>\n            </div>\n            <div class=\"feature\">\n
+    \               <div class=\"feature-icon\">\U0001F4F1</div>\n                <h3>Mobile
+    Banking</h3>\n                <p>Bank anywhere, anytime with our award-winning
+    app</p>\n            </div>\n            <div class=\"feature\">\n                <div
+    class=\"feature-icon\">\U0001F4AC</div>\n                <h3>24/7 Support</h3>\n
+    \               <p>Expert assistance whenever you need it</p>\n            </div>\n
+    \           <div class=\"feature\">\n                <div class=\"feature-icon\">\U0001F3AF</div>\n
+    \               <h3>Financial Tools</h3>\n                <p>Smart tools to help
+    you reach your goals</p>\n            </div>\n        </div>\n    </section>\n\n
+    \   <section class=\"cta\">\n        <h2>Ready to Start?</h2>\n        <p>Join
+    millions of satisfied customers who trust AmeriBank</p>\n        <a href=\"#\"
+    class=\"btn btn-primary\">Get Started</a>\n    </section>\n\n    <footer class=\"footer\">\n
+    \       <div class=\"footer-content\">\n            <div class=\"footer-section\">\n
+    \               <h4>Personal</h4>\n                <ul class=\"footer-links\">\n
+    \                   <li><a href=\"#\" class=\"footer-link\">Checking</a></li>\n
+    \                   <li><a href=\"#\" class=\"footer-link\">Savings</a></li>\n
+    \                   <li><a href=\"#\" class=\"footer-link\">Credit Cards</a></li>\n
+    \                   <li><a href=\"#\" class=\"footer-link\">Mortgages</a></li>\n
+    \               </ul>\n            </div>\n            <div class=\"footer-section\">\n
+    \               <h4>Business</h4>\n                <ul class=\"footer-links\">\n
+    \                   <li><a href=\"#\" class=\"footer-link\">Business Checking</a></li>\n
+    \                   <li><a href=\"#\" class=\"footer-link\">Credit & Lending</a></li>\n
+    \                   <li><a href=\"#\" class=\"footer-link\">Merchant Services</a></li>\n
+    \                   <li><a href=\"#\" class=\"footer-link\">Treasury Management</a></li>\n
+    \               </ul>\n            </div>\n            <div class=\"footer-section\">\n
+    \               <h4>Resources</h4>\n                <ul class=\"footer-links\">\n
+    \                   <li><a href=\"#\" class=\"footer-link\">Help Center</a></li>\n
+    \                   <li><a href=\"#\" class=\"footer-link\">Security Center</a></li>\n
+    \                   <li><a href=\"#\" class=\"footer-link\">Contact Us</a></li>\n
+    \                   <li><a href=\"#\" class=\"footer-link\">Locations</a></li>\n
+    \               </ul>\n            </div>\n            <div class=\"footer-section\">\n
+    \               <h4>About</h4>\n                <ul class=\"footer-links\">\n
+    \                   <li><a href=\"#\" class=\"footer-link\">About Us</a></li>\n
+    \                   <li><a href=\"#\" class=\"footer-link\">Careers</a></li>\n
+    \                   <li><a href=\"#\" class=\"footer-link\">Investor Relations</a></li>\n
+    \                   <li><a href=\"#\" class=\"footer-link\">Community</a></li>\n
+    \               </ul>\n            </div>\n        </div>\n        <div class=\"footer-bottom\">\n
+    \           <p>© 2024 AmeriBank. All rights reserved. | Privacy Policy | Terms
+    of Service | Accessibility</p>\n        </div>\n    </footer>\n</body>\n</html>\n"

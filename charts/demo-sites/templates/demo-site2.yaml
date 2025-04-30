@@ -1,0 +1,122 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: demo-site2
+data:
+  config: |
+    server {
+        listen 8002;
+        server_name localhost;
+
+        location / {
+            root /usr/share/nginx/html;
+            index index.html;
+        }
+    }
+  html: "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n
+    \   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n
+    \   <meta name=\"description\" content=\"QuantumCore Technologies - Next-generation
+    quantum processors and computing solutions\">\n    <title>QuantumCore Technologies</title>\n
+    \   <style>\n        .logo {\n            font-size: 1.5rem;\n            font-weight:
+    bold;\n            color: white !important;\n        }\n        :root {\n            --primary-color:
+    #006312;\n            --secondary-color: #49B618;\n            --text-color: #ffffff;\n
+    \           --bg-color: #1e1e1e;\n            --section-padding: 4rem 2rem;\n
+    \       }\n\n        * {\n            margin: 0;\n            padding: 0;\n            box-sizing:
+    border-box;\n        }\n\n        body {\n            font-family: system-ui,
+    -apple-system, sans-serif;\n            line-height: 1.6;\n            color:
+    var(--text-color);\n        }\n\n        .container {\n            max-width:
+    1200px;\n            margin: 0 auto;\n            padding: 0 1rem;\n        }\n\n
+    \       hr.solid {\n            height: 10px;\n            background-color: #858985;\n
+    \           border: none;\n        }\n\n\n        /* Navigation */\n        nav
+    {\n            background: var(--bg-color);\n            padding: 1rem;\n            position:
+    sticky;\n            top: 0;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.1);\n
+    \           z-index: 1000;\n        }\n\n        .nav-content {\n            display:
+    flex;\n            justify-content: space-between;\n            align-items: center;\n
+    \       }\n\n        .logo {\n            font-size: 1.5rem;\n            font-weight:
+    bold;\n            color: var(--primary-color);\n        }\n\n        .nav-links
+    {\n            display: flex;\n            gap: 2rem;\n            list-style:
+    none;\n        }\n\n        .nav-links a {\n            text-decoration: none;\n
+    \           color: var(--text-color);\n            font-weight: 500;\n        }\n\n
+    \       /* Hero Section */\n        .hero {\n            background: linear-gradient(45deg,
+    var(--primary-color), var(--secondary-color));\n            color: white;\n            padding:
+    var(--section-padding);\n            text-align: center;\n        }\n\n        .hero
+    h1 {\n            font-size: 3rem;\n            margin-bottom: 1.5rem;\n        }\n\n
+    \       .hero p {\n            font-size: 1.2rem;\n            margin-bottom:
+    2.5rem;\n        }\n\n        /* Products Section */\n        .products {\n            padding:
+    var(--section-padding);\n            background: #1e1e1e;\n        }\n\n        .product-grid
+    {\n            display: grid;\n            grid-template-columns: repeat(auto-fit,
+    minmax(300px, 1fr));\n            gap: 2rem;\n            margin-top: 2rem;\n
+    \       }\n\n        .product-card {\n            background: #858985;\n            padding:
+    2rem;\n            border-radius: 8px;\n            box-shadow: 0 4px 6px rgba(0,0,0,0.1);\n
+    \           transition: transform 0.3s ease;\n            text-align: center;\n
+    \           display: flex;\n            flex-direction: column;\n            align-items:
+    center;\n            gap: 1rem;\n        }\n\n        .product-card:hover {\n
+    \           transform: translateY(-5px);\n        }\n\n        .product-card h3
+    {\n            margin-bottom: 0.5rem;\n        }\n\n        .product-card p {\n
+    \           margin-bottom: 1.5rem;\n        }\n\n        /* Features Section */\n
+    \       .features {\n            padding: var(--section-padding);\n            background:
+    #1e1e1e;\n        }\n\n        .feature-grid {\n            display: grid;\n            grid-template-columns:
+    repeat(auto-fit, minmax(250px, 1fr));\n            gap: 2rem;\n            margin-top:
+    2rem;\n        }\n\n        .feature-card {\n            padding: 1.5rem;\n            border:
+    1px solid #e5e7eb;\n            border-radius: 8px;\n        }\n\n        \n        /*
+    Contact Section */\n        .contact {\n            padding: var(--section-padding);\n
+    \           background: #1e1e1e;\n        }\n\n        /* Common Styles */\n        .btn
+    {\n            display: inline-block;\n            padding: 0.75rem 1.5rem;\n
+    \           background: var(--primary-color);\n            color: white;\n            text-decoration:
+    none;\n            border-radius: 4px;\n            transition: background-color
+    0.3s ease;\n        }\n\n        .btn:hover {\n            background: var(--secondary-color);\n
+    \       }\n\n        h2 {\n            font-size: 2.25rem;\n            text-align:
+    center;\n            margin-bottom: 2rem;\n        }\n\n        /* Footer */\n
+    \       footer {\n            padding: 2rem;\n            text-align: center;\n
+    \           background: var(--text-color);\n            color: black;\n        }\n\n
+    \       /* Responsive Design */\n        @media (max-width: 768px) {\n            .nav-content
+    {\n                flex-direction: column;\n                gap: 1rem;\n            }\n\n
+    \           .nav-links {\n                flex-direction: column;\n                text-align:
+    center;\n                gap: 1rem;\n            }\n\n            .hero h1 {\n
+    \               font-size: 2rem;\n            }\n\n            .hero p {\n                margin-bottom:
+    2rem;\n            }\n        }\n    </style>\n</head>\n<body>\n    <nav>\n        <div
+    class=\"container nav-content\">\n            <div class=\"logo\">QuantumCore</div>\n
+    \           <ul class=\"nav-links\">\n                <li><a href=\"#home\">Home</a></li>\n
+    \               <li><a href=\"#products\">Products</a></li>\n                <li><a
+    href=\"#features\">Features</a></li>\n                <li><a href=\"#contact\">Contact</a></li>\n
+    \           </ul>\n        </div>\n    </nav>\n\n    <section id=\"home\" class=\"hero\">\n
+    \       <div class=\"container\">\n            <h1>Welcome to QuantumCore Technologies</h1>\n
+    \           <p>Revolutionizing computing with next-generation processors</p>\n
+    \           <a href=\"#products\" class=\"btn\">Explore Our Products</a>\n        </div>\n
+    \   </section>\n\n    <section id=\"products\" class=\"products\">\n        <div
+    class=\"container\">\n            <h2>Our Products</h2>\n            <div class=\"product-grid\">\n
+    \               <div class=\"product-card\">\n                    <h3>QuantumX
+    5000</h3>\n                    <p>High-performance desktop processor</p>\n                    <a
+    href=\"#\" class=\"btn\">Learn More</a>\n                </div>\n                <div
+    class=\"product-card\">\n                    <h3>NanoQ Series</h3>\n                    <p>Energy-efficient
+    mobile processors</p>\n                    <a href=\"#\" class=\"btn\">Learn More</a>\n
+    \               </div>\n                <div class=\"product-card\">\n                    <h3>QuantumServer</h3>\n
+    \                   <p>Enterprise-grade server solutions</p>\n                    <a
+    href=\"#\" class=\"btn\">Learn More</a>\n                </div>\n            </div>\n
+    \       </div>\n    </section>\n    <hr class=\"solid\">\n    <section id=\"features\"
+    class=\"features\">\n        <div class=\"container\">\n            <h2>Key Features</h2>\n
+    \           <div class=\"feature-grid\">\n                <div class=\"feature-card\">\n
+    \                   <h3>Quantum Architecture</h3>\n                    <p>Revolutionary
+    design for unparalleled performance</p>\n                </div>\n                <div
+    class=\"feature-card\">\n                    <h3>AI Acceleration</h3>\n                    <p>Integrated
+    AI cores for faster machine learning</p>\n                </div>\n                <div
+    class=\"feature-card\">\n                    <h3>Energy Efficiency</h3>\n                    <p>Advanced
+    power management for longer battery life</p>\n                </div>\n                <div
+    class=\"feature-card\">\n                    <h3>Security First</h3>\n                    <p>Built-in
+    encryption and secure boot technology</p>\n                </div>\n            </div>\n
+    \       </div>\n    </section>\n    <hr class=\"solid\">\n    <section id=\"contact\"
+    class=\"contact\">\n        <div class=\"container\">\n            <h2>Contact
+    Us</h2>\n            <form id=\"contact-form\" class=\"contact-form\">\n                <div
+    style=\"max-width: 500px; margin: 0 auto;\">\n                    <div style=\"margin-bottom:
+    1rem;\">\n                        <input type=\"text\" placeholder=\"Your Name\"
+    style=\"width: 100%; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px;\">\n
+    \                   </div>\n                    <div style=\"margin-bottom: 1rem;\">\n
+    \                       <input type=\"email\" placeholder=\"Your Email\" style=\"width:
+    100%; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px;\">\n                    </div>\n
+    \                   <div style=\"margin-bottom: 1rem;\">\n                        <textarea
+    placeholder=\"Your Message\" rows=\"4\" style=\"width: 100%; padding: 0.5rem;
+    border: 1px solid #ddd; border-radius: 4px;\"></textarea>\n                    </div>\n
+    \                   <button type=\"submit\" class=\"btn\" style=\"width: 100%;\">Send
+    Message</button>\n                </div>\n            </form>\n        </div>\n
+    \   </section>\n\n    <footer>\n        <div class=\"container\">\n            <p>©
+    2024 QuantumCore Technologies. All rights reserved.</p>\n        </div>\n    </footer>\n</body>\n</html>\n"
